@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #70C1B3;
+}
+
+.wrapper {
+  display: flex;
+
+}
+
+.menu {
+  background-color: #B2DBBF;
+}
+
+.button {
+  background-color: #FF1654;
+  border: 2px solid #FF1654;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  color: #fff;
+  transition: 0.25s;
+}
+
+.button:hover,
+.button:focus {
+  border-color: #ff8716;
+  color: #fff;
+  box-shadow: inset 12.5em 0 0 0 #ff8716;
+}
+
+#editor-container {
+  width: 600px;
+  height: 600px;
+}
+
+canvas {
+  background-image: url('./assets/transparent.png') !important;
+}
