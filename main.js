@@ -1,9 +1,8 @@
 const input = document.querySelector('input')
 const download = document.querySelector('#download')
-let state = {};
 
 const stage = new Konva.Stage({
-  container: 'editr-container',   // id of container <div>
+  container: 'editr-container',
   width: 600,
   height: 600
 });
@@ -29,11 +28,6 @@ const aaa = () => {
 //TRANSFORM HAT
 
 stage.on('click tap', function (e) {
-  // if (e.target === stage) {
-  //   stage.find('Transformer').destroy();
-  //   layer.draw();
-  //   return;
-  // }
   if (!e.target.hasName('hat')) {
     stage.find('Transformer').destroy();
     layer.draw();
@@ -67,7 +61,6 @@ const addImageToLayer = (event) => {
     const imageObj = new Image();
     
     imageObj.onload = () => {
-      // resizeCanvas(imageObj)
       const ratio = calculateResizeRatio(imageObj);
 
       const avatar = new Konva.Image({
@@ -78,7 +71,6 @@ const addImageToLayer = (event) => {
         height: (imageObj.height * ratio)
       });
       
-      state = {width: imageObj.width, height: imageObj.height};
       layer.add(avatar);
       layer.batchDraw();
       aaa()
@@ -97,13 +89,6 @@ const calculateResizeRatio = (image) => {
   } else {
     return 1
   }
-}
-
-const resizeCanvas = (image) => {
-  const newWidth = image.width > 600 ? 600 : image.width;
-  const newHeight = image.height > 600 ? 600 : image.height;
-  stage.width(newWidth) 
-  stage.height(newHeight)
 }
 
 input.addEventListener('change', handleAvatarInput);
